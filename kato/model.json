@@ -1,5 +1,5 @@
 {
-	"version":"Katou 1.0.0",
+	"version":"Sample 1.0.0",
 	"model":"moc/katou.moc",
 	"textures":[
 		"moc/katou.2048/texture_00.png"
@@ -18,22 +18,19 @@
 		{"name":"body", "id":"D_REF.PT_BODY"}
 	],
 	"motions":{
-		"tap_head":[
-			{
-              "file":"mtn/I_ANGRY.mtn"
-             }],
-          "tap_body":[
+		"tap_body":[
+			{"file":"mtn/I_ANGRY.mtn","fade_in":500, "fade_out":1000},
+			{"file":"mtn/I_ANGRY_S.mtn"},
+			{"file":"mtn/I_ANGRY_W.mtn"},
 			{"file":"mtn/I_FUN.mtn","fade_in":500, "fade_out":1000},
 			{"file":"mtn/I_FUN_S.mtn"},
-			{"file":"mtn/I_FUN_W.mtn"}],
-		  "pinch_in":[
+			{"file":"mtn/I_FUN_W.mtn"},
 			{"file":"mtn/I_SAD.mtn","fade_in":500, "fade_out":1000},
 			{"file":"mtn/I_SAD_S.mtn"},
 			{"file":"mtn/I_SAD_W.mtn"},
 			{"file":"mtn/I_SURPRISE.mtn","fade_in":500, "fade_out":1000},
 			{"file":"mtn/I_SURPRISE_S.mtn"},
-			{"file":"mtn/I_SURPRISE_W.mtn"}],
-		 "idle":[
+			{"file":"mtn/I_SURPRISE_W.mtn"},
 			{"file":"mtn/IDLING_01.mtn","fade_in":500, "fade_out":1000},
 			{"file":"mtn/IDLING_02.mtn"},
 			{"file":"mtn/IDLING_03.mtn"},
