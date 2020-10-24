@@ -40,7 +40,7 @@
 			{"file":"mtn/IDLING_02.mtn","fade_in":500, "fade_out":1000},
 			{"file":"mtn/IDLING_03.mtn","fade_in":500, "fade_out":1000}
 		],
-		"pinch_in":[
+		"tap_head":[
 			{"file":"mtn/I_FUN.mtn","sound": "voice/1.wav"}
 		]
 	},
