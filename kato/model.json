@@ -41,7 +41,7 @@
 			{"file":"mtn/IDLING_03.mtn","fade_in":500, "fade_out":1000}
 		],
 		"pinch_in":[
-			{"file":"mtn/I_FUN.mtn","sound": "voice/1.mp3"}
+			{"file":"mtn/I_FUN.mtn","sound": "voice/1.wav"}
 		]
 	},
 	"physics":"physics.json",
