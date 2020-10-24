@@ -19,10 +19,10 @@
 	],
 	"motions":{
 		"tap_body":[
-			{"file":"mtn/I_ANGRY.mtn","fade_in":500, "fade_out":1000},
+			{"file":"mtn/I_ANGRY.mtn","fade_in":500, "fade_out":500},
 			{"file":"mtn/I_ANGRY_S.mtn"},
 			{"file":"mtn/I_ANGRY_W.mtn"},
-			{"file":"mtn/I_FUN.mtn","fade_in":500, "fade_out":1000},
+			{"file":"mtn/I_FUN.mtn","fade_in":500, "fade_out":500,"sound":"voice/1.wav"},
 			{"file":"mtn/I_FUN_S.mtn"},
 			{"file":"mtn/I_FUN_W.mtn"},
 			{"file":"mtn/I_SAD.mtn","fade_in":500, "fade_out":1000},
