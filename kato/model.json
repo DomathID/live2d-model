@@ -12,6 +12,12 @@
 		{"name":"F_SAD","file":"exp/F_SAD.exp.json"},
 		{"name":"F_SURPRISE","file":"exp/F_SURPRISE.exp.json"}
 	],
+	"hit_areas_custom":{
+        "head_x":[-0.3, 1.12],
+        "head_y":[0.26, 0.56],
+        "body_x":[-0.41, 0.58],
+        "body_y":[0.46, -1.12]
+    },
 	"hit_areas":
 	[
 		{"name":"head", "id":"D_REF.PT_HEAD"},
