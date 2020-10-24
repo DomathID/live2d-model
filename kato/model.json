@@ -19,7 +19,7 @@
 	],
 	"motions":{
 		"tap_body":[
-			{"file":"mtn/I_ANGRY.mtn","fade_in":500, "fade_out":800},
+			{"file":"mtn/I_ANGRY.mtn","msg_id":1,"fade_in":500, "fade_out":800},
 			{"file":"mtn/I_FUN.mtn","sound": "voice/1.wav","fade_in":500, "fade_out":800},
 			{"file":"mtn/I_SAD.mtn","fade_in":500, "fade_out":800},
 			{"file":"mtn/I_SURPRISE.mtn","sound": "voice/1.wav","fade_in":500, "fade_out":800},
