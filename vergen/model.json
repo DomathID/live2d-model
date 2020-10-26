@@ -35,7 +35,7 @@
 		],
 		"start": [{
 			"file": "motions/start.mtn",
-			"sound": "sound/start.wav",
+			"sound": "sound/start.mp3",
 			"text": "",
 			"fade_in": 0,
 			"fade_out": 0
@@ -48,21 +48,21 @@
 		}],
 		"tap_body": [{
 			"file": "motions/tap_body.mtn",
-			"sound": "sound/tap_body.wav",
+			"sound": "sound/tap_body.mp3",
 			"text": "",
 			"fade_in": 0,
 			"fade_out": 0
 		}],
 		"tap_arm_left": [{
 			"file": "motions/tap_Lhand.mtn",
-			"sound": "sound/tap_Lhand.wav",
+			"sound": "sound/tap_Lhand.mp3",
 			"text": "",
 			"fade_in": 0,
 			"fade_out": 0
 		}],
 		"tap_arm_right": [{
 			"file": "motions/tap_Rhand.mtn",
-			"sound": "sound/tap_Rhand.wav",
+			"sound": "sound/tap_Rhand.mp3",
 			"text": "",
 			"fade_in": 0,
 			"fade_out": 0
@@ -75,7 +75,7 @@
 		}],
 		"new_msg": [{
 			"file": "motions/tap_Lhand.mtn",
-			"sound": "sound/tap_Lhand.wav",
+			"sound": "sound/tap_Lhand.mp3",
 			"text": "",
 			"fade_in": 0,
 			"fade_out": 0
