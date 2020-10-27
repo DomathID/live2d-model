@@ -1,17 +1,1 @@
 
-<script src='https://l2dwidget.js.org/lib/L2Dwidget.min.js'/>
-    <script type='text/javascript'>
-L2Dwidget.on(&quot;*&quot;,o=&gt;{console.log(&quot;%c EVENT %c -&gt; &quot;+o,&quot;background: #222; color: yellow&quot;,&quot;background: #fff; color: #000&quot;)})
-          .init({model: {
-jsonPath:&#39;./vergen/model.json&#39;,scale: 1},
-             display: {
-                &quot;position&quot;: &quot;right&quot;,
-                &quot;width&quot;: 150,
-                &quot;height&quot;: 300,
-                &quot;hOffset&quot;: 0,
-                &quot;vOffset&quot;: -20
-            },mobile: { 
-         show: true,
-         scale: 1},
-      dialog:{enable: true,script:{&quot;every idle 10s&quot;:&quot;$hitokoto$&quot;,&quot;hover .star&quot;:&quot;星星在天上而你在我心里 (*/ω\*)&quot;,&quot;tap body&quot;:&quot;哎呀 别碰我&quot;,&quot;tap face&quot;:&quot;人家已经不是小孩子了&quot;}}});
-    </script>
