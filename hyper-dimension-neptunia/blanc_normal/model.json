@@ -21,10 +21,10 @@
 		"body_y":[0.3, -0.9]
 	},
 	"motions": {
-        "idle": [
-            {"file": "motions/../../general/mtn/idle_00.mtn", "fade_in": 2000, "fade_out": 2000},
-            {"file": "motions/../../general/mtn/idle_01.mtn", "fade_in": 2000, "fade_out": 2000},
-            {"file": "motions/../../general/mtn/idle_02.mtn", "fade_in": 2000, "fade_out": 2000}
+        "tap_body": [
+            {"file": "motions/../../general/mtn/idle_00.mtn", "fade_in": 0, "fade_out": 0},
+            {"file": "motions/../../general/mtn/idle_01.mtn", "fade_in": 0, "fade_out": 0},
+            {"file": "motions/../../general/mtn/idle_02.mtn", "fade_in": 0, "fade_out": 0}
         ]
 	}
 }
