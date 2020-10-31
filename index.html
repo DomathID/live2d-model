@@ -1,1 +1,51 @@
 
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Test - WibuDev</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <script src="https://l2dwidget.js.org/lib/L2Dwidget.min.js"></script>
+    <script type="text/javascript">
+      L2Dwidget
+        .on('*', (name) => {
+          console.log('%c EVENT ' + '%c -> ' + name, 'background: #222; color: yellow', 'background: #fff; color: #000')
+        })
+        .init({
+           model: {
+               jsonPath: "https://raw.githubusercontent.com/domathid/live2d/main/kato/model.json"},
+            display: {
+                "position": "right",
+                "width": 180,
+                "height": 460,
+                "hOffset": 0,
+                "vOffset": 0
+            },
+           mobile: { 
+               show: true,
+               scale: 1.4
+           },
+          dialog: {
+            // 开启对话框
+            enable: true,
+            script: {
+              // 每空闲 10 秒钟，显示一条一言
+              'every idle 10s': '$hitokoto$',
+              // 当触摸到星星图案
+              'hover .star': '星星在天上而你在我心里 (*/ω＼*)',
+              // 当触摸到角色身体
+              'tap body': '哎呀！别碰我！',
+              // 当触摸到角色头部
+              'tap face': '人家已经不是小孩子了！'
+            }
+          }
+        });
+    </script>
+  </body>
+</html>
+
