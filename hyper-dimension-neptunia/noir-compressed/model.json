@@ -4,7 +4,7 @@
     "textures": [
         "textures.1024/noir-00.webp",
         "textures.1024/noir-01.webp",
-        "textures.1024/n-02.webp"
+        "textures.1024/noir-02.webp"
     ],
     "pose": "../general/pose.json",
     "physics": "physics.json",
