@@ -1,0 +1,10 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "yukimi_koume.moc3",
+		"Textures": [
+			"yukimi_koume.2048/texture_00.png"
+		],
+		"DisplayInfo": "yukimi_koume.cdi3.json"
+	}
+}
