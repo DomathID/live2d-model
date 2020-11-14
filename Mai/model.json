@@ -2,7 +2,7 @@
     "version":"Sample 1.0.0",
     "model": "model.moc",
     "textures": [
-        "textures.1024/00.png"
+        "textures.1024/texture_00.png"
     ],
     "pose": "./general/pose.json",
     "physics": "physics.json",
