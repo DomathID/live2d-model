@@ -2,7 +2,7 @@
     "version":"Sample 1.0.0",
     "model": "model.moc",
     "textures": [
-        "youkimi_koume.2048/texture_00.png"
+        "yukimi_koume.2048/texture_00.png"
     ],
     "pose": "./general/pose.json",
     "physics": "physics.json",
