@@ -1,6 +1,6 @@
 {
     "version":"Sample 1.0.0",
-    "model": "model.moc",
+    "model": "yukimi_koume.moc3",
     "textures": [
         "yukimi_koume.2048/texture_00.png"
     ],
