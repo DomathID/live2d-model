@@ -2,7 +2,7 @@
 	"version":"Sample 1.0.0",
 	"model":"model.moc",
 	"textures":[
-		"youkimi_koume/texture_00.png"
+		"youkimi_koume.2048/texture_00.png"
 	],
 	"hit_areas": [
 		{
