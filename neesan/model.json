@@ -2,7 +2,7 @@
 	"version":"Sample 1.0.0",
 	"model":"model.moc",
 	"textures":[
-		"model.2048/texture_00.png"
+		"model.2048/texture_00.webp"
 	],
 	"motions":{
 		"idle":[
@@ -23,6 +23,6 @@
 		{"name":"gear_r", "id":"D_REF.GEAR_R"}
 	},
 	"physics":"physics.json",
-	"project_settings":"embed://14.json",
+	"project_settings";"embed://14.json",
 	"name":"PreviewModel"
 }
