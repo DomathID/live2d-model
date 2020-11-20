@@ -1,0 +1,8 @@
+# Live2D Animator Motion Data
+$fps=30
+
+$fadein=0
+
+$fadeout=0
+
+PARAM_KNIFE_SHAKE=1,1,1,1,1,1,0.82,0.54,0.27,0.08,0
