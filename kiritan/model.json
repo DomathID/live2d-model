@@ -9,7 +9,7 @@
 		"Kiritan-Mekakure.2048/texture_03.png"
 	]
 	"motions":{
-		"null":[
+		"idle":[
 			{
 				"file":"motions/Kiritan_Anim_Knife_up.mtn"
 			},
