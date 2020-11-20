@@ -1,0 +1,34 @@
+{
+	"type": "Live2D Model Setting",
+	"name": "Kiritan-Mekakure",
+	"model": "Kiritan-Mekakure.moc",
+	"textures": [
+		"Kiritan-Mekakure.2048/texture_00.png",
+		"Kiritan-Mekakure.2048/texture_01.png",
+		"Kiritan-Mekakure.2048/texture_02.png",
+		"Kiritan-Mekakure.2048/texture_03.png"
+	]
+	"motions":{
+		"null":[
+			{
+				"file":"motions/Kiritan_Anim_Knife_up.mtn"
+			},
+			{
+				"file":"motions/Kiritan_WaveHands_00.mtn"
+			},
+			{
+				"file":"motions/Kiritan_WavePeace_00.mtn"
+			},
+			{
+				"file":"motions/Kiritan_WaveHands_00_Smile.mtn"
+			},
+			{
+				"file":"motions/Kiritan_BasiliskTime.mtn"
+			},
+			{
+				"file":"motions/Kiritan_Ashamed.mtn"
+			},
+		]
+	}
+	"physics":"Kiritan-Mekakure.physics.json"
+}
