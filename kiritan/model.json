@@ -8,6 +8,7 @@
 		"Kiritan-Mekakure.2048/texture_02.png",
 		"Kiritan-Mekakure.2048/texture_03.png"
 	],
+        "physics":"Kiritan-Mekakure.physics.json",
 	"motions":{
 		"idle":[
 			{
@@ -29,6 +30,5 @@
 				"file":"motions/Kiritan_Ashamed.mtn"
 			},
 		]
-	}
-	"physics":"Kiritan-Mekakure.physics.json"
-}
+          }
+     }
