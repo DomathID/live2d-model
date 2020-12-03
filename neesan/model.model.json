@@ -3,7 +3,7 @@
 	"name": "model",
 	"model": "model.moc",
 	"textures": [
-		"texture.1024/texture_00.webp"
+		"texture.1024/neesan.webp"
 	],
 	"physics":"physics.json",
 
