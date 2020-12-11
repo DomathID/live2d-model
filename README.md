@@ -9,6 +9,7 @@ if you want to know more, how to use it you can read the article.
 https://www.bacotan-wibu.com/2020/11/cara-membuat-widget-anime-di-blog.html
 ### Resource
 - https://L2dwidget.js.org
+- https://live2d.com
 ### Contributing
 Contributing is very open to anyone, if you want to make a contribution with this repo please fork this repo and pull it with a description of what you added
 
