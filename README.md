@@ -7,6 +7,8 @@ First, I am not the maker of all these models, I only collect them from the inte
 ### Help 
 if you want to know more, how to use it you can read the article.
 https://www.bacotan-wibu.com/2020/11/cara-membuat-widget-anime-di-blog.html
+### Preview
+https://baka-onichan.web.app
 ### Resource
 - https://L2dwidget.js.org
 - https://live2d.com
