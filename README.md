@@ -9,6 +9,8 @@ https://baka-onichan.web.app
 ### Resource
 - https://L2dwidget.js.org
 - https://live2d.com
+### Support
+- https://trakteer.id/bang-domath
 ### Contributing
 Contributing is very open to anyone, if you want to make a contribution with this repo please fork this repo and pull it with a description of what you added
 
