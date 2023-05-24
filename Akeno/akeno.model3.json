@@ -1,0 +1,18 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "akeno.moc3",
+		"Textures": [
+			"akeno.4096/texture_00.png"
+		],
+		"Physics": "akeno.physics3.json",
+		"DisplayInfo": "akeno.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	]
+}
