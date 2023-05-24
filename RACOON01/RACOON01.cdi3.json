@@ -1,0 +1,307 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "Param7",
+			"GroupId": "ParamGroup",
+			"Name": "가슴 흔들림 X1"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "ParamGroup",
+			"Name": "가슴 흔들림 X2"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "ParamGroup",
+			"Name": "가슴 흔들림 Y1"
+		},
+		{
+			"Id": "Param10",
+			"GroupId": "ParamGroup",
+			"Name": "가슴 흔들림 Y2"
+		},
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "",
+			"Name": "각도 X"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "",
+			"Name": "각도 Y"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "",
+			"Name": "각도 Z"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "",
+			"Name": "오른쪽 눈 깜빡임"
+		},
+		{
+			"Id": "ParamEyeLSmile",
+			"GroupId": "",
+			"Name": "왼쪽 눈 미소"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "",
+			"Name": "왼쪽 눈 깜빡임"
+		},
+		{
+			"Id": "ParamEyeRSmile",
+			"GroupId": "",
+			"Name": "오른쪽 눈 미소"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "R 눈동자 하이라이트  X"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "R 눈동자 하이라이트 Y"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "L 눈동자 하이라이트 X"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "L 눈동자 하이라이트 Y"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "",
+			"Name": "눈 X"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "",
+			"Name": "눈 Y"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "오른쪽 눈동자 물리연산"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "왼쪽 눈동자 물리연산"
+		},
+		{
+			"Id": "ParamBrowRY",
+			"GroupId": "",
+			"Name": "오른쪽 눈썹 위아래로"
+		},
+		{
+			"Id": "ParamBrowRX",
+			"GroupId": "",
+			"Name": "오른쪽 눈썹 좌우로"
+		},
+		{
+			"Id": "ParamBrowRForm",
+			"GroupId": "",
+			"Name": "오른쪽 눈썹 변형"
+		},
+		{
+			"Id": "ParamBrowLForm",
+			"GroupId": "",
+			"Name": "왼쪽 눈썹 변형"
+		},
+		{
+			"Id": "ParamBrowLY",
+			"GroupId": "",
+			"Name": "왼쪽 눈썹 위아래로"
+		},
+		{
+			"Id": "ParamBrowLX",
+			"GroupId": "",
+			"Name": "왼쪽 눈썹 좌우로"
+		},
+		{
+			"Id": "ParamBrowRAngle",
+			"GroupId": "",
+			"Name": "오른쪽 눈썹 각도"
+		},
+		{
+			"Id": "ParamBrowLAngle",
+			"GroupId": "",
+			"Name": "왼쪽 눈썹 각도"
+		},
+		{
+			"Id": "ParamMouthForm",
+			"GroupId": "",
+			"Name": "입 변형"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "",
+			"Name": "입 여닫기"
+		},
+		{
+			"Id": "ParamCheek",
+			"GroupId": "",
+			"Name": "수줍은"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "",
+			"Name": "몸의 회전 X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "",
+			"Name": "몸의 회전　Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "",
+			"Name": "몸의 회전 Z"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "",
+			"Name": "호흡"
+		},
+		{
+			"Id": "ParamHairFrontX1",
+			"GroupId": "",
+			"Name": "머리 흔들림 앞 X1"
+		},
+		{
+			"Id": "ParamHairFrontY1",
+			"GroupId": "",
+			"Name": "머리 흔들림 앞 Y1"
+		},
+		{
+			"Id": "ParamHairFrontX2",
+			"GroupId": "",
+			"Name": "머리 흔들림 앞 X2"
+		},
+		{
+			"Id": "ParamHairFrontY2",
+			"GroupId": "",
+			"Name": "머리 흔들림 앞 Y2"
+		},
+		{
+			"Id": "Param_Angle_Rotation5",
+			"GroupId": "ParamGroup2",
+			"Name": "[0]Tail skinning"
+		},
+		{
+			"Id": "Param_Angle_Rotation6",
+			"GroupId": "ParamGroup2",
+			"Name": "[1]Tail skinning"
+		},
+		{
+			"Id": "Param_Angle_Rotation7",
+			"GroupId": "ParamGroup2",
+			"Name": "[2]Tail skinning"
+		},
+		{
+			"Id": "Param_Angle_Rotation8",
+			"GroupId": "ParamGroup2",
+			"Name": "[3]Tail skinning"
+		}
+	],
+	"ParameterGroups": [
+		{
+			"Id": "ParamGroup",
+			"GroupId": "",
+			"Name": "Breast"
+		},
+		{
+			"Id": "ParamGroup2",
+			"GroupId": "",
+			"Name": "Tail skinning"
+		}
+	],
+	"Parts": [
+		{
+			"Id": "Part5",
+			"Name": "head.psd"
+		},
+		{
+			"Id": "head",
+			"Name": "head"
+		},
+		{
+			"Id": "body",
+			"Name": "body"
+		},
+		{
+			"Id": "PartSketch0",
+			"Name": "[ 밑그림 ]"
+		},
+		{
+			"Id": "Part",
+			"Name": "Hair Side"
+		},
+		{
+			"Id": "ear",
+			"Name": "ear"
+		},
+		{
+			"Id": "HairFront",
+			"Name": "HairFront"
+		},
+		{
+			"Id": "Part2",
+			"Name": "Hair SideB"
+		},
+		{
+			"Id": "Part3",
+			"Name": "eye R"
+		},
+		{
+			"Id": "Part4",
+			"Name": "eye L"
+		},
+		{
+			"Id": "Mouth",
+			"Name": "Mouth"
+		},
+		{
+			"Id": "face",
+			"Name": "face"
+		},
+		{
+			"Id": "arm",
+			"Name": "arm"
+		},
+		{
+			"Id": "leg",
+			"Name": "leg"
+		},
+		{
+			"Id": "tail_Skinning",
+			"Name": "tail(스키닝)"
+		}
+	],
+	"CombinedParameters": [
+		[
+			"ParamAngleX",
+			"ParamAngleY"
+		],
+		[
+			"ParamEyeBallX",
+			"ParamEyeBallY"
+		],
+		[
+			"ParamMouthForm",
+			"ParamMouthOpenY"
+		],
+		[
+			"ParamBodyAngleX",
+			"ParamBodyAngleY"
+		]
+	]
+}
