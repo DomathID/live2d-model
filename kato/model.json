@@ -19,7 +19,7 @@
 	],
 	"motions":{
 		"tap_body":[
-			{"file":"mtn/I_ANGRY.mtn","fade_in":500, "fade_out":800},
+			{"sound": "voice/1.wav","file":"mtn/I_ANGRY.mtn","fade_in":500, "fade_out":800},
 			{"file":"mtn/I_ANGRY_S.mtn"},
 			{"file":"mtn/I_ANGRY_W.mtn"},
 			{"file":"mtn/I_FUN.mtn","fade_in":500, "fade_out":800},
@@ -28,9 +28,9 @@
 			{"file":"mtn/I_SAD.mtn","fade_in":500, "fade_out":800},
 			{"file":"mtn/I_SAD_S.mtn"},
 			{"file":"mtn/I_SAD_W.mtn"},
-			{"file":"mtn/I_SURPRISE.mtn","fade_in":500, "fade_out":800},
-			{"file":"mtn/I_SURPRISE_S.mtn"},
-			{"file":"mtn/I_SURPRISE_W.mtn"},
+			{"sound": "voice/1.wav","file":"mtn/I_SURPRISE.mtn","fade_in":500, "fade_out":800},
+			{"sound": "voice/1.wav","file":"mtn/I_SURPRISE_S.mtn"},
+			{"sound": "voice/1.wav","file":"mtn/I_SURPRISE_W.mtn"},
 			{"file":"mtn/IDLING_01.mtn","fade_in":500, "fade_out":800},
 			{"file":"mtn/IDLING_02.mtn"},
 			{"file":"mtn/IDLING_03.mtn"},
