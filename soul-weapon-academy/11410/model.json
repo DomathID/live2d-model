@@ -4,8 +4,8 @@
 	"model": "Lead_00.moc",
 	"textures": {
         "11410":[
-		  "texture_00.png",
-		  "texture_01.png"
+		  "texture_00(1).png",
+		  "texture_01(1).png"
 	   ]
     },
     "config":{
