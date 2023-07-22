@@ -1,4 +1,7 @@
+
+
 ### live2d-model-collection
+<center><img src="logo/Live2D.png" width="300px" height="250px"></center>
 Model live2D Collection for Live2D widget.js (WIP)  💃👚
 First, I am not the maker of all these models, I only collect them from the internet and from various sources. And I hope you don't use it for commercial purposes.
 ### How to Use
