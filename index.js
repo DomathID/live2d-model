@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 const baseURL = 'https://live2d.nekochan.eu.org';
 const githubRepoURL = 'https://api.github.com/repos/DomathID/live2d-model/contents/';
 
-app.get('/api/:modelName', async (req, res) => {
+app.get('/:modelName', async (req, res) => {
     const modelName = req.params.modelName;
     const modelUrl = `${baseURL}/${modelName}/model.json`;
 
@@ -21,7 +21,7 @@ app.get('/api/:modelName', async (req, res) => {
     }
 });
 
-app.get('/api/models', async (req, res) => {
+app.get('/', async (req, res) => {
     try {
         const response = await axios.get(githubRepoURL);
         const models = response.data.filter(item => item.type === 'dir').map(item => item.name);
