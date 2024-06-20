@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live2D Models</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live2D Models</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Model Name</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody id="modelList"></tbody>
+    </table>
+
+    <script>
+        async function fetchModels() {
+            try {
+                const response = await fetch('/api/models');
+                const models = await response.json();
+                const modelList = document.getElementById('modelList');
+
+                models.forEach(model => {
+                    const row = document.createElement('tr');
+                    const nameCell = document.createElement('td');
+                    const linkCell = document.createElement('td');
+                    const link = document.createElement('a');
+
+                    nameCell.textContent = model;
+                    link.href = `/api/${model}/model.json`;
+                    link.textContent = "View Model JSON";
+                    linkCell.appendChild(link);
+
+                    row.appendChild(nameCell);
+                    row.appendChild(linkCell);
+                    modelList.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Failed to fetch model list', error);
+            }
+        }
+
+        fetchModels();
+    </script>
+</body>
+</html>
+
