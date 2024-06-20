@@ -1,40 +1,20 @@
 const express = require('express');
-const axios = require('axios');
-const cheerio = require('cheerio');
+const { getModel } = require('./controllers/modelController');
+const { getModelList } = require('./controllers/modelListController');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-const baseURL = 'https://live2d.nekochan.eu.org';
-const githubRepoURL = 'https://api.github.com/repos/DomathID/live2d-model/contents/';
+// Rute API untuk mengambil model.json
+app.get('/api/:modelName/model.json', getModel);
 
-app.get('/:modelName', async (req, res) => {
-    const modelName = req.params.modelName;
-    const modelUrl = `${baseURL}/${modelName}/model.json`;
+// Rute API untuk mengambil daftar model
+app.get('/api/models', getModelList);
 
-    try {
-        const response = await axios.get(modelUrl);
-        res.json(response.data);
-    } catch (error) {
-        console.error('Error fetching model.json:', error.message);
-        res.status(500).json({ error: 'Failed to fetch model.json' });
-    }
-});
-
-app.get('/', async (req, res) => {
-    try {
-        const response = await axios.get(githubRepoURL);
-        const models = response.data.filter(item => item.type === 'dir').map(item => item.name);
-
-        res.json(models);
-    } catch (error) {
-        console.error('Error fetching model list:', error.message);
-        res.status(500).json({ error: 'Failed to fetch model list' });
-    }
-});
-
+// Menyajikan halaman HTML
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
 app.listen(port, () => {
@@ -42,4 +22,3 @@ app.listen(port, () => {
 });
 
 module.exports = app;
-
