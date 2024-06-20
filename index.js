@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Rute API untuk mengambil model.json
-app.get('/api/:modelName/model.json', getModel);
+app.get('/api/:modelName/', getModel);
 
 // Rute API untuk mengambil daftar model
 app.get('/api/models', getModelList);
