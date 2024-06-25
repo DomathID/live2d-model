@@ -17,8 +17,10 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <link rel='stylesheet' id='wp-members-css' href='https://juku.live2dcs.jp/wp-content/plugins/wp-members/assets/css/forms/generic-no-float.min.css?ver=3.4.9.5' type='text/css' media='all' />
   <body class="page-Index" style="opacity:0; overflow:hidden;">          
   <div id="live2d-container"></div>
-
-<script>
+<script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.3.0/browser/pixi.min.js"></script>
+  <script src="https://unpkg.com/pixi-live2d-display@0.3.1/dist/cubism4.min.js"></script>
+<script type="text/javascript">
 const cubism4Model = "https://live2d.nekochan.eu.org/pachan/pachirisu%20anime%20girl%20-%20top%20half.model3.json";
 const live2d = PIXI.live2d;
 
@@ -47,8 +49,5 @@ const live2d = PIXI.live2d;
   onResize();
 })();
 </script>
-<script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.3.0/browser/pixi.min.js"></script>
-  <script src="https://unpkg.com/pixi-live2d-display@0.3.1/dist/cubism4.min.js"></script>
 </body>
 </html>
