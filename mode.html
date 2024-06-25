@@ -48,22 +48,25 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
   
    <canvas id="canvas"></canvas>
   <script>
-  const cubism2Model =
-  "https://live2d.nekochan.eu.org/pachan/pachirisu%20anime%20girl%20-%20top%20half.model3.json";
-
+const cubism4Model = "https://live2d.nekochan.eu.org/pachan/pachirisu%20anime%20girl%20-%20top%20half.model3.json";
+const live2d = PIXI.live2d;
 
 (async function main() {
   const app = new PIXI.Application({
     view: document.getElementById("canvas"),
     autoStart: true,
-    transparent: true,
-    resizeTo: window
+    transparent: true  // Make the background transparent
   });
 
-  const model2 = await PIXI.live2d.Live2DModel.from(cubism2Model);
-  app.stage.addChild(model2);
-  model2.scale.set(0.3);
+  const model = await live2d.Live2DModel.from(cubism4Model);
+  app.stage.addChild(model);
+
+  const scaleX = (innerWidth * 0.5) / model.width;
+  const scaleY = (innerHeight * 0.8) / model.height;
+
+  model.scale.set(Math.min(scaleX, scaleY));
+  model.y = innerHeight * 0.1;
 })();
-</script>
+  </script>
   </body>
 </html>
