@@ -29,36 +29,71 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
   </style>
 </head>
 <style>
-  #canvas {
-      width: auto;
-      height: auto; 
-      align-items:center;
-      position: relative;
-      overflow: hidden;
-      }
+  canvas {
+  display:block;
+}
+
+#canvas {
+  position: center;
+  overflow: hidden;
+  top:0%;
+  left:0%;
+}
+  </style>
 </style>
-  
+  <main>
    <canvas id="canvas"></canvas>
-  <script>
-const cubism4Model = "https://live2d.nekochan.eu.org/pachan/pachirisu%20anime%20girl%20-%20top%20half.model3.json";
+ <script>
+    const cubism2Model =
+  "https://live2d.nekochan.eu.org/pachan/pachirisu%20anime%20girl%20-%20top%20half.model3.json";
+const cubism4Model =
+  "https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display/test/assets/haru/haru_greeter_t03.model3.json";
+
 const live2d = PIXI.live2d;
 
 (async function main() {
   const app = new PIXI.Application({
     view: document.getElementById("canvas"),
     autoStart: true,
-    transparent: true  // Make the background transparent
+    align : 'center',
+    resizeTo: window,
+    transparent: true
   });
 
-  const model = await live2d.Live2DModel.from(cubism4Model);
-  app.stage.addChild(model);
+  const models = await Promise.all([
+    live2d.Live2DModel.from(cubism2Model)
+  ]);
 
-  const scaleX = (innerWidth * 0.5) / model.width;
-  const scaleY = (innerHeight * 0.8) / model.height;
+  models.forEach((model) => {
+    app.stage.addChild(model);
 
-  model.scale.set(Math.min(scaleX, scaleY));
-  model.y = innerHeight * 0.1;
+    const scaleX = (innerWidth * 0.4) / model.width;
+    const scaleY = (innerHeight * 0.8) / model.height;
+
+    // fit the window
+    model.scale.set(Math.min(scaleX, scaleY));
+
+    model.y = innerHeight * 0.1;
+
+  });
+
+  const model2 = models[0];
+
+  model2.x = (innerWidth - model2.width - model4.width) / 0;
+
+  // handle tapping
+
+  model2.on("hit", (hitAreas) => {
+    if (hitAreas.includes("body")) {
+      model2.motion("tap_body");
+    }
+
+    if (hitAreas.includes("head")) {
+      model2.expression();
+    }
+  });
+
 })();
-  </script>
-  </body>
+</script>
+</body>
 </html>
