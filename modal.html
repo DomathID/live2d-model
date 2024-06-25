@@ -1,0 +1,29 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://l2dwidget.js.org/lib/L2Dwidget.min.js"></script>
+    <script type="text/javascript">
+      L2Dwidget
+        .init({
+           model: {
+               jsonPath: "https://l2d-model.vercel.app/neesan/model.model.json"},
+            display: {
+                "position": "right",
+                "width": 220,
+                "height": 320,
+                "hOffset": 0,
+                "vOffset": 0
+           },
+           mobile: { 
+               show: true,
+               scale: 1
+           },
+          dialog: {
+            enable: true,
+            script: {
+              'every idle 10s': '$hitokoto$',
+              'hover .star': '星星在天上而你在我心里 (*/ω＼*)',
+              'tap body': '哎呀！别碰我！',
+              'tap face': '人家已经不是小孩子了！'
+            }
+          }
+        });
+    </script>
