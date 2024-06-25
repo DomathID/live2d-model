@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   
-  <script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.3.0/browser/pixi.min.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/pixi-live2d-display@0.4.0/dist/cubism4.js" crossorigin="anonymous"></script>
+  <script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@6.5.2/dist/browser/pixi.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display/dist/index.min.js"></script>
+
 <link rel='stylesheet' id='wp-members-css' href='https://juku.live2dcs.jp/wp-content/plugins/wp-members/assets/css/forms/generic-no-float.min.css?ver=3.4.9.5' type='text/css' media='all' />
 <link rel="stylesheet" href="https://juku.live2dcs.jp/wp-content/themes/live2djuku_v2.3/assets/css/index/lib.css?hash=1708345469522">
     <link rel="stylesheet" href="https://juku.live2dcs.jp/wp-content/themes/live2djuku_v2.3/assets/css/index/style.css?hash=1708345469522">
@@ -27,62 +29,45 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
   </style>
 </head>
 <style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   #live2d-container {
-      width: 90%; 
-      max-width: 60px;
+      width: auto;
       height: auto; 
-      text-align: center center;
+      text-align: center;
       position: relative;
       overflow: hidden;
       }
   </style>
 </style>
   
-              <div class="chara">
-<div id="live2d-container"></div>
-              </div>
-<script>
-    const cubism4Model = "https://live2d.nekochan.eu.org/pachan/pachirisu%20anime%20girl%20-%20top%20half.model3.json";
-    const live2d = PIXI.live2d;
-    let app;
-    let model;
+   <canvas id="canvas"></canvas>
+  <script>
+  const cubism2Model =
+  "https://live2d.nekochan.eu.org/pachan/pachirisu%20anime%20girl%20-%20top%20half.model3.json";
 
-    async function main() {
-      const container = document.getElementById("live2d-container");
 
-      // Ensure container is a <canvas> element
-      const canvas = document.createElement('canvas');
-      container.appendChild(canvas);
+(async function main() {
+  const app = new PIXI.Application({
+    view: document.getElementById("canvas"),
+    autoStart: true,
+    transparent: true,
+    resizeTo: window
+  });
 
-      app = new PIXI.Application({
-        view: canvas,
-        autoStart: true,
-        transparent: true
-      });
+  const model2 = await PIXI.live2d.Live2DModel.from(cubism2Model);
 
-      model = await live2d.Live2DModel.from(cubism4Model);
-      app.stage.addChild(model);
+  app.stage.addChild(model2);
 
-      updateModelScale();
+  model2.scale.set(0.3);
 
-      window.addEventListener('resize', () => {
-        updateModelScale();
-      });
-    }
-
-    function updateModelScale() {
-      const scaleX = (window.innerWidth * 0.5) / model.width;
-      const scaleY = (window.innerHeight * 0.8) / model.height;
-      const scale = Math.min(scaleX, scaleY);
-
-      model.scale.set(scale);
-      model.y = window.innerHeight * 0.1;
-
-      // Resize PIXI renderer
-      app.renderer.resize(window.innerWidth, window.innerHeight);
-    }
-
-    main();
-  </script>
+  model2.x = 300;
+})();
+</script>
   </body>
 </html>
