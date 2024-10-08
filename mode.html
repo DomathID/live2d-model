@@ -29,6 +29,23 @@
       height: 100%;
       z-index: 1;
     }
+    .content {
+      position: absolute;
+      z-index: 2;
+      text-align: center;
+      color: #000;
+      font-family: Arial, sans-serif;
+    }
+
+    .content h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .content p {
+      font-size: 1.5em;
+    }
+
     .button-container {
       position: absolute;
       bottom: 20px;
@@ -91,7 +108,11 @@
 <body>
 
   <canvas id="canvas"></canvas>
-
+<!-- Front Elements -->
+  <div class="content">
+    <h1>Welcome to My Live2D Page</h1>
+    <p>Enjoy the animated background!</p>
+  </div>
   <!-- Container untuk tombol -->
   <div class="button-container">
     <button class="anime-btn" id="btn1">Aksi 1</button>
