@@ -13,114 +13,154 @@
   
   <!-- Custom CSS -->
   <style>
-    body, html {
+    body {
       margin: 0;
       padding: 0;
-      overflow: hidden;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       background-color: #f0f0f0;
-      position: relative;
+      font-family: 'Comic Sans MS', sans-serif;
+      text-align: center;
     }
 
     #canvas {
       position: absolute;
-      top: 0;
+      top: 10%;
       left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
+      right: 0;
+      z-index: -1;
     }
 
-    .content {
+    .button-container {
       position: absolute;
-      z-index: 2;
-      text-align: center;
-      color: #000;
-      font-family: Arial, sans-serif;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    .content h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
+    .anime-btn {
+      background-color: #ff66a3;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 24px;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      margin: 10px;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
     }
 
-    .content p {
-      font-size: 1.5em;
+    /* Efek Hover */
+    .anime-btn:hover {
+      background-color: #ff99cc;
+      transform: scale(1.1);
     }
 
-    .content img {
-      max-width: 150px;
-      height: auto;
-      margin-top: 20px;
+    /* Efek Klik Animasi */
+    .anime-btn:active {
+      animation: bounce 0.3s ease;
+    }
+
+    @keyframes bounce {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    /* Efek Cahaya di Sekeliling Tombol */
+    .anime-btn::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      right: -6px;
+      bottom: -6px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+      border-radius: 16px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .anime-btn:hover::before {
+      opacity: 1;
     }
   </style>
 </head>
 <body>
 
-  <!-- Live2D Canvas -->
   <canvas id="canvas"></canvas>
 
-  <!-- Front Elements -->
-  <div class="content">
-    <h1>Welcome to My Live2D Page</h1>
-    <p>Enjoy the animated background!</p>
+  <!-- Container untuk tombol -->
+  <div class="button-container">
+    <button class="anime-btn" id="btn1">Aksi 1</button>
+    <button class="anime-btn" id="btn2">Aksi 2</button>
+    <button class="anime-btn" id="btn3">Aksi 3</button>
   </div>
 
-  <!-- Live2D Script -->
   <script>
-const cubism2Model =
-  "https://live2d.nekochan.eu.org/pachan/pachirisu%20anime%20girl%20-%20top%20half.model3.json";
+    // Live2D Model yang sudah diimplementasikan
+    const cubism2Model = "https://live2d.nekochan.eu.org/pachan/pachirisu%20anime%20girl%20-%20top%20half.model3.json";
+    const live2d = PIXI.live2d;
 
-const live2d = PIXI.live2d;
+    (async function main() {
+      const app = new PIXI.Application({
+        view: document.getElementById("canvas"),
+        autoStart: true,
+        resizeTo: window,
+        transparent: true
+      });
 
-(async function main() {
-  const app = new PIXI.Application({
-    view: document.getElementById("canvas"),
-    autoStart: true,
-    resizeTo: window,
-    transparent: true
-  });
+      const model = await live2d.Live2DModel.from(cubism2Model);
 
-  const model = await live2d.Live2DModel.from(cubism2Model);
+      app.stage.addChild(model);
 
-  app.stage.addChild(model);
+      function resizeModel() {
+        const screenWidth = window.innerWidth;
 
-  // Fungsi untuk menyesuaikan ukuran model sesuai dengan lebar layar
-  function resizeModel() {
-    const screenWidth = window.innerWidth;
+        if (screenWidth > 1024) {
+          const scaleX = (innerWidth * 0.6) / model.width;
+          const scaleY = (innerHeight * 1.2) / model.height;
+          model.scale.set(Math.min(scaleX, scaleY));
+          model.y = innerHeight * 0.1;
+        } else if (screenWidth > 768 && screenWidth <= 1024) {
+          const scaleX = (innerWidth * 0.8) / model.width;
+          const scaleY = (innerHeight * 1.0) / model.height;
+          model.scale.set(Math.min(scaleX, scaleY));
+          model.y = innerHeight * 0.1;
+        } else {
+          const scaleX = (innerWidth * 0.9) / model.width;
+          const scaleY = (innerHeight * 0.9) / model.height;
+          model.scale.set(Math.min(scaleX, scaleY));
+          model.y = innerHeight * 0.05;
+        }
+      }
 
-    if (screenWidth > 1024) {
-      // Desktop: perbesar model
-      const scaleX = (innerWidth * 0.6) / model.width;
-      const scaleY = (innerHeight * 1.2) / model.height;
-      model.scale.set(Math.min(scaleX, scaleY));
-      model.y = innerHeight * 0.1; // Posisi vertikal di desktop
-    } else if (screenWidth > 768 && screenWidth <= 1024) {
-      // Tablet: sesuaikan skala model
-      const scaleX = (innerWidth * 0.8) / model.width;
-      const scaleY = (innerHeight * 1.0) / model.height;
-      model.scale.set(Math.min(scaleX, scaleY));
-      model.y = innerHeight * 0.1; // Posisi vertikal di tablet
-    } else {
-      // Mobile: perkecil model agar sesuai layar
-      const scaleX = (innerWidth * 0.9) / model.width;
-      const scaleY = (innerHeight * 0.9) / model.height;
-      model.scale.set(Math.min(scaleX, scaleY));
-      model.y = innerHeight * 0.05; // Posisi vertikal di ponsel
-    }
-  }
+      resizeModel();
+      window.addEventListener("resize", resizeModel);
+    })();
 
-  // Panggil fungsi resize saat aplikasi dimulai
-  resizeModel();
+    // Menambahkan suara pada tombol saat diklik
+    const soundEffect1 = new Audio('https://www.myinstants.com/media/sounds/anime-wow-sound.mp3');
+    const soundEffect2 = new Audio('https://www.myinstants.com/media/sounds/cute_anime_sound.mp3');
+    const soundEffect3 = new Audio('https://www.myinstants.com/media/sounds/cute-anime-girl-sound.mp3');
 
-  // Menyesuaikan model setiap kali ukuran jendela diubah
-  window.addEventListener("resize", resizeModel);
-})();
-    </script>
+    document.getElementById('btn1').addEventListener('click', function() {
+      soundEffect1.play();
+      alert('Aksi 1 dilakukan!');
+    });
+
+    document.getElementById('btn2').addEventListener('click', function() {
+      soundEffect2.play();
+      alert('Aksi 2 dilakukan!');
+    });
+
+    document.getElementById('btn3').addEventListener('click', function() {
+      soundEffect3.play();
+      alert('Aksi 3 dilakukan!');
+    });
+  </script>
 
 </body>
 </html>
