@@ -25,86 +25,37 @@
       background-color: #f0f0f0;
       position: relative;
     }
-    body{
-  background: #3399ff;
-}
 
+    body {
+      background: #3399ff;
+    }
 
-.circle{
-  position: absolute;
-  border-radius: 50%;
-  background: white;
-  animation: ripple 15s infinite;
-  box-shadow: 0px 0px 1px 0px #508fb9;
-}
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: white;
+      animation: ripple 15s infinite;
+      box-shadow: 0px 0px 1px 0px #508fb9;
+    }
 
-.small{
-  width: 200px;
-  height: 200px;
-  left: -100px;
-  bottom: -100px;
-}
+    .small { width: 200px; height: 200px; left: -100px; bottom: -100px; }
+    .medium { width: 400px; height: 400px; left: -200px; bottom: -200px; }
+    .large { width: 600px; height: 600px; left: -300px; bottom: -300px; }
+    .xlarge { width: 800px; height: 800px; left: -400px; bottom: -400px; }
+    .xxlarge { width: 1000px; height: 1000px; left: -500px; bottom: -500px; }
 
-.medium{
-  width: 400px;
-  height: 400px;
-  left: -200px;
-  bottom: -200px;
-}
+    .shade1 { opacity: 0.2; }
+    .shade2 { opacity: 0.5; }
+    .shade3 { opacity: 0.7; }
+    .shade4 { opacity: 0.8; }
+    .shade5 { opacity: 0.9; }
 
-.large{
-  width: 600px;
-  height: 600px;
-  left: -300px;
-  bottom: -300px;
-}
+    @keyframes ripple {
+      0% { transform: scale(0.8); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(0.8); }
+    }
 
-.xlarge{
-  width: 800px;
-  height: 800px;
-  left: -400px;
-  bottom: -400px;
-}
-
-.xxlarge{
-  width: 1000px;
-  height: 1000px;
-  left: -500px;
-  bottom: -500px;
-}
-
-.shade1{
-  opacity: 0.2;
-}
-.shade2{
-  opacity: 0.5;
-}
-
-.shade3{
-  opacity: 0.7;
-}
-
-.shade4{
-  opacity: 0.8;
-}
-
-.shade5{
-  opacity: 0.9;
-}
-
-@keyframes ripple{
-  0%{
-    transform: scale(0.8);
-  }
-  
-  50%{
-    transform: scale(1.2);
-  }
-  
-  100%{
-    transform: scale(0.8);
-  }
-}
     #canvas {
       position: absolute;
       top: 0;
@@ -143,7 +94,7 @@
     <div class='circle xxlarge shade1'></div>
     <div class='circle xlarge shade2'></div>
     <div class='circle large shade3'></div>
-    <div class='circle mediun shade4'></div>
+    <div class='circle medium shade4'></div>
     <div class='circle small shade5'></div>
   </div>
   
@@ -154,56 +105,53 @@
   <div class="content">
     <h1>Welcome to My Live2D Page</h1>
     <p>Enjoy the animated background!</p>
-    
   </div>
+
   <!-- Live2D Script -->
-<script>
-const cubism2Model =
-  "https://live2d.nekochan.eu.org/Hotaru/hotaru_keyvisual.model3.json";
+  <script>
+    const cubism2Model =
+      "https://live2d.nekochan.eu.org/Hotaru/hotaru_keyvisual.model3.json";
 
-const live2d = PIXI.live2d;
+    const live2d = PIXI.live2d;
 
-(async function main() {
-  const app = new PIXI.Application({
-    view: document.getElementById("canvas"),
-    autoStart: true,
-    resizeTo: window,
-    transparent: true
-  });
+    (async function main() {
+      const app = new PIXI.Application({
+        view: document.getElementById("canvas"),
+        autoStart: true,
+        resizeTo: window,
+        transparent: true,
+        resolution: window.devicePixelRatio || 1, // Set resolution based on device pixel ratio
+        antialias: true // Enable antialiasing
+      });
 
-  const model = await live2d.Live2DModel.from(cubism2Model);
+      const model = await live2d.Live2DModel.from(cubism2Model);
+      app.stage.addChild(model);
 
-  app.stage.addChild(model);
+      function resizeModel() {
+        const screenWidth = window.innerWidth;
 
-  
-  function resizeModel() {
-    const screenWidth = window.innerWidth;
+        let scaleX, scaleY;
 
-    if (screenWidth > 1024) {
-      
-      const scaleX = (innerWidth * 0.6) / model.width;
-      const scaleY = (innerHeight * 1.2) / model.height;
-      model.scale.set(Math.min(scaleX, scaleY));
-      model.y = innerHeight * 0.1; // Posisi vertikal di desktop
-    } else if (screenWidth > 768 && screenWidth <= 1024) {
-      
-      const scaleX = (innerWidth * 0.8) / model.width;
-      const scaleY = (innerHeight * 1.0) / model.height;
-      model.scale.set(Math.min(scaleX, scaleY));
-      model.y = innerHeight * 0.1; // Posisi vertikal di tablet
-    } else {
-      
-      const scaleX = (innerWidth * 0.9) / model.width;
-      const scaleY = (innerHeight * 1.9) / model.height;
-      model.scale.set(Math.min(scaleX, scaleY));
-      model.y = innerHeight * 0.5; 
-    }
-  }
+        if (screenWidth > 1024) {
+          scaleX = (innerWidth * 0.6) / model.width;
+          scaleY = (innerHeight * 1.2) / model.height;
+          model.y = innerHeight * 0.1; // Position for desktop
+        } else if (screenWidth > 768 && screenWidth <= 1024) {
+          scaleX = (innerWidth * 0.8) / model.width;
+          scaleY = (innerHeight * 1.0) / model.height;
+          model.y = innerHeight * 0.1; // Position for tablet
+        } else {
+          scaleX = (innerWidth * 0.9) / model.width;
+          scaleY = (innerHeight * 1.9) / model.height;
+          model.y = innerHeight * 0.5; // Position for mobile
+        }
 
+        model.scale.set(Math.min(scaleX, scaleY));
+      }
 
-  resizeModel();
-  window.addEventListener("resize", resizeModel);
-})();
-</script>
+      resizeModel();
+      window.addEventListener("resize", resizeModel);
+    })();
+  </script>
 </body>
 </html>
