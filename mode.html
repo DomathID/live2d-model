@@ -68,7 +68,7 @@
   <div class="content">
     <h1>Welcome to My Live2D Page</h1>
     <p>Enjoy the animated background!</p>
-    <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+    
   </div>
 
   <!-- Live2D Script -->
@@ -108,10 +108,10 @@ const live2d = PIXI.live2d;
       model.y = innerHeight * 0.1; // Posisi vertikal di tablet
     } else {
       // Mobile: perkecil model agar sesuai layar
-      const scaleX = (innerWidth * 0.5) / model.width;
-      const scaleY = (innerHeight * 0.8) / model.height;
+      const scaleX = (innerWidth * 0.9) / model.width;
+      const scaleY = (innerHeight * 1.9) / model.height;
       model.scale.set(Math.min(scaleX, scaleY));
-      model.y = innerHeight * 0.1; // Posisi vertikal di ponsel
+      model.y = innerHeight * 0.5; // Posisi vertikal di ponsel
     }
   }
 
