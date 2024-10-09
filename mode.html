@@ -115,53 +115,55 @@
     const live2d = PIXI.live2d;
 
     (async function main() {
-      const app = new PIXI.Application({
-        view: document.getElementById("canvas"),
-        autoStart: true,
-        resizeTo: window,
-        transparent: true,
-        resolution: window.devicePixelRatio || 1, // Set resolution based on device pixel ratio
-        antialias: true // Enable antialiasing
-      });
-      model2.on("hit", (hitAreas) => {
+  const app = new PIXI.Application({
+    view: document.getElementById("canvas"),
+    autoStart: true,
+    resizeTo: window,
+    transparent: true,
+    resolution: window.devicePixelRatio || 1, // Set resolution based on device pixel ratio
+    antialias: true // Enable antialiasing
+  });
+
+  const model = await live2d.Live2DModel.from(cubism2Model);
+  app.stage.addChild(model);
+
+  // Event Listener for Model Interactions
+  model.on("hit", (hitAreas) => {
     if (hitAreas.includes("Body")) {
-      model2.motion("Tap");
+      model.motion("Tap"); // Trigger a motion when the body is tapped
     }
 
     if (hitAreas.includes("Head")) {
-      model2.expression();
+      model.expression(); // Change expression when the head is tapped
     }
   });
+
+  // Resize model based on screen size
+  function resizeModel() {
+    const screenWidth = window.innerWidth;
+
+    let scaleX, scaleY;
+
+    if (screenWidth > 1024) {
+      scaleX = (innerWidth * 0.6) / model.width;
+      scaleY = (innerHeight * 1.2) / model.height;
+      model.y = innerHeight * 0.1; // Position for desktop
+    } else if (screenWidth > 768 && screenWidth <= 1024) {
+      scaleX = (innerWidth * 0.8) / model.width;
+      scaleY = (innerHeight * 1.0) / model.height;
+      model.y = innerHeight * 0.1; // Position for tablet
+    } else {
+      scaleX = (innerWidth * 0.9) / model.width;
+      scaleY = (innerHeight * 1.9) / model.height;
+      model.y = innerHeight * 0.5; // Position for mobile
+    }
+
+    model.scale.set(Math.min(scaleX, scaleY));
+  }
+
+  resizeModel();
+  window.addEventListener("resize", resizeModel);
 })();
-
-      const model = await live2d.Live2DModel.from(cubism2Model);
-      app.stage.addChild(model);
-
-      function resizeModel() {
-        const screenWidth = window.innerWidth;
-
-        let scaleX, scaleY;
-
-        if (screenWidth > 1024) {
-          scaleX = (innerWidth * 0.6) / model.width;
-          scaleY = (innerHeight * 1.2) / model.height;
-          model.y = innerHeight * 0.1; // Position for desktop
-        } else if (screenWidth > 768 && screenWidth <= 1024) {
-          scaleX = (innerWidth * 0.8) / model.width;
-          scaleY = (innerHeight * 1.0) / model.height;
-          model.y = innerHeight * 0.1; // Position for tablet
-        } else {
-          scaleX = (innerWidth * 0.9) / model.width;
-          scaleY = (innerHeight * 1.9) / model.height;
-          model.y = innerHeight * 0.5; // Position for mobile
-        }
-
-        model.scale.set(Math.min(scaleX, scaleY));
-      }
-
-      resizeModel();
-      window.addEventListener("resize", resizeModel);
-    })();
   </script>
 </body>
 </html>
