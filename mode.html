@@ -1,3 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live2D Background Example</title>
+  
+  <!-- Live2D SDK -->
+  <script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pixi.js@6.5.2/dist/browser/pixi.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display/dist/index.min.js"></script>
+  
+  <!-- Custom CSS -->
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      position: relative;
+    }
+
+    #canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .content {
+      position: absolute;
+      z-index: 2;
+      text-align: center;
+      color: #000;
+      font-family: Arial, sans-serif;
+    }
+
+    .content h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .content p {
+      font-size: 1.5em;
+    }
+
+    .content img {
+      max-width: 150px;
+      height: auto;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Live2D Canvas -->
+  <canvas id="canvas"></canvas>
+
+  <!-- Front Elements -->
+  <div class="content">
+    <h1>Welcome to My Live2D Page</h1>
+    <p>Enjoy the animated background!</p>
+    <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+  </div>
+
+  <!-- Live2D Script -->
 <script>
 const cubism2Model =
   "https://live2d.nekochan.eu.org/pachan/pachirisu%20anime%20girl%20-%20top%20half.model3.json";
@@ -48,3 +122,5 @@ const live2d = PIXI.live2d;
   window.addEventListener("resize", resizeModel);
 })();
 </script>
+</body>
+</html>
