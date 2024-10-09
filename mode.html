@@ -123,8 +123,18 @@
         resolution: window.devicePixelRatio || 1, // Set resolution based on device pixel ratio
         antialias: true // Enable antialiasing
       });
+      model2.on("hit", (hitAreas) => {
+    if (hitAreas.includes("Body")) {
+      model4.motion("Tap");
+    }
 
-      const model = await live2d.Live2DModel.from(cubism4Model);
+    if (hitAreas.includes("Head")) {
+      model2.expression();
+    }
+  });
+})();
+
+      const model = await live2d.Live2DModel.from(cubism2Model);
       app.stage.addChild(model);
 
       function resizeModel() {
